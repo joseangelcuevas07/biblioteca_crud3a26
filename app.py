@@ -1,7 +1,7 @@
 from dao.libro_dao import LibroDAO
 from models.libro import Libro
 
-def main():
+def ver_libros(): 
     try:
         libro_dao = LibroDAO()
         
@@ -24,5 +24,43 @@ def main():
         print("Error: ")
         print(e)
         
+def insertar_libro():
+    titulo = input("Escribe el nombre del nuevo libro: ")
+    autor = input("Escribe el id del autor: ")
+    isbn = input("Escribe el isbn del nuevo libro: ")
+    disponible = True
+    try:
+        libro_dao = LibroDAO()
+        id = libro_dao.obtener_ultimo_id() + 1
+        libro = Libro(id, titulo, autor, isbn, disponible)
+        libro_dao.insertar(libro)
+        print("Inserción realizada con exito")
+    except Exception as e:
+        print("Error al insertar un nuevo libro")
+        print(e)
+        
+        
+        
+    
+def main():
+    print ("=== BIBLIOTECA UNIVERSITARIA ===")
+    print("Menú de opciones")
+    print("1. Ver todos los libros")
+    print("2. Insertar un nuevo libro")
+    print("3. Actualizar un libro disponible")
+    print("4. Eliminar un libro diponible")
+    opcion = int(input("Seleccciona una opción (1-4):"))
+    
+    match opcion:
+        case 1:
+            ver_libros()
+        case 2:
+            insertar_libro()
+        case 3:
+            actualizar_libro()
+        case 4:
+            eliminar_libro()
+    
+
 if __name__ == "__main__":
-    main()        
+     main()          
