@@ -5,7 +5,7 @@ def main_window(page: ft.Page):
     page.window_width = 1100
     page.windown_height = 700
     page.padding = 0
-    page.bgcolor = "#f5f5f5"
+    
     page.bgcolor = ft.Colors.BLUE_GREY_50
     
     #ejemplo de widget
@@ -53,27 +53,27 @@ def main_window(page: ft.Page):
                 ),
                 ft.Divider(color = ft.Colors.BLUE_GREY_700),
                 ft.ElevatedButton(
-                    text = "Libros",
+                    "Libros",
                     icon = ft.Icons.BOOK,
-                    widht = 180,
+                    width = 180,
                     
                 ),
                 ft.ElevatedButton(
-                    text = "Usuarios",
+                    "Usuarios",
                     icon = ft.Icons.PERSON,
-                    widht = 180,
+                    width = 180,
                     
                 ),
                 ft.ElevatedButton(
-                    text = "Prestamos",
+                    "Prestamos",
                     icon = ft.Icons.SWAP_HORIZ,
-                    widht = 180,
+                    width = 180,
                     
                 ),
                 ft.ElevatedButton(
-                    text = "Devoluciones",
+                    "Devoluciones",
                     icon = ft.Icons.KEYBOARD_RETURN,
-                    widht = 180,
+                    width = 180,
                     
                 ),                
             ],
